@@ -1,0 +1,12 @@
+.typeName {
+    text-align: center;
+    color: #263326;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+@media(min-width: 768px) {
+    .typeName {
+        font-size: 22px;
+    }
+}

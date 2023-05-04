@@ -5,6 +5,7 @@ import { clearShowsData, setLoading } from "../../redux/actions";
 import SearchField from "../SearchField/SearchField";
 import ShowsList from "../ShowsList/ShowsList";
 import { useNavigate } from "react-router-dom";
+import style from './Main.module.css'
 
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -37,8 +38,8 @@ const Main = () => {
     return (
         <div>
             <SearchField handleSearch={handleSearch} />
-            {searchQuery.length < 2 ? <p>Type the show's name</p>
-                : loading ? "LOADING..." : <ShowsList shows={shows} handleClick={handleClick} />}
+            {searchQuery.length < 2 ? <p className={style.typeName}>Type the show's name</p>
+                : loading ? <p className={style.typeName}>LOADING... </p> : <ShowsList shows={shows} handleClick={handleClick} />}
         </div>
     )
 }
