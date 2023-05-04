@@ -1,3 +1,6 @@
+export const setLoading = () => ({
+    type: "SET_LOADING",
+});
 export const setShowsData = (showsData) => ({
     type: "SET_SHOWS_DATA",
     payload: showsData,

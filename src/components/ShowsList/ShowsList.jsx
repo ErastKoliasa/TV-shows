@@ -1,6 +1,5 @@
 import photo from "../../img/missing.jpg" 
 const ShowsList = ({shows, handleClick}) => {
-    
     return(
         <div>
             { shows.length === 0 ? "Sorry, nothing found with this search" :
