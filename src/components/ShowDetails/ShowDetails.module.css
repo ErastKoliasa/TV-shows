@@ -1,0 +1,40 @@
+.detailsContainer {
+    padding: 120px 15%;
+    color: #263326;
+}
+
+.detailsContainer img { 
+    width: 210px;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.genre {
+    display: inline-block;
+    padding: 3px;
+    margin: 5px;
+    border: 2px solid #263326;
+    border-radius: 10px;
+}
+
+.rating {
+    color: #FAA000
+}
+
+@media(min-width: 768px) {
+    .detailsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;
+    }
+
+    .detailsContainer img { 
+        width: 80%;
+    }
+
+    .detailsContainer h2 {
+        margin-top: 0px;
+    }
+}
