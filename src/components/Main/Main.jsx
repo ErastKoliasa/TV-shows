@@ -1,40 +1,44 @@
 import { useEffect, useState } from "react";
 import { getShowDetails, getShowsData } from "../../redux/middleware";
 import { useDispatch, useSelector } from "react-redux";
-import { clearShowsData } from "../../redux/actions";
+import { clearShowsData, setLoading } from "../../redux/actions";
 import SearchField from "../SearchField/SearchField";
 import ShowsList from "../ShowsList/ShowsList";
-import ShowDetails from "../ShowDetails/ShowDetails";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
     const [searchQuery, setSearchQuery] = useState("");
+    const loading = useSelector(state => state.loading)
     const shows = useSelector(state => state.showsData);
-    const showDetails = useSelector(state => state.showDetails);
     const dispatch = useDispatch();
-    
+    const navigate = useNavigate();
+
     useEffect(() => {
-        if(searchQuery.length >= 2) {
+        if (searchQuery.length >= 2) {
+            dispatch(setLoading());
             dispatch(getShowsData(searchQuery));
         }
-        else(
+        else (
             dispatch(clearShowsData())
         )
-    }, [searchQuery,dispatch])
+        
+    }, [searchQuery, dispatch])
 
     const handleSearch = (event) => {
         setSearchQuery(event.target.value);
     };
 
-    const handleClick = (id) => {
-        dispatch(getShowDetails(id))
+    async function handleClick(id) {
+        dispatch(setLoading())
+        await dispatch(getShowDetails(id))
+        navigate("details")
     }
 
-    return(
+    return (
         <div>
-            <SearchField handleSearch={handleSearch}/>
-            {searchQuery.length < 2 ? <p>Type the show's name</p> : <ShowsList shows={shows} handleClick={handleClick}/>}
-            {console.log(showDetails)}
-            {showDetails ? <ShowDetails showDetails={showDetails} />:""}
+            <SearchField handleSearch={handleSearch} />
+            {searchQuery.length < 2 ? <p>Type the show's name</p>
+                : loading ? "LOADING..." : <ShowsList shows={shows} handleClick={handleClick} />}
         </div>
     )
 }
