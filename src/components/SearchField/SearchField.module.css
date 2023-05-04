@@ -1,0 +1,20 @@
+.containerSearchField {
+    padding-top: 120px;
+    text-align: center;
+}
+
+.containerSearchField input {
+    width: 50%;
+    color: #263326;
+    font-size: 14px;
+    padding: 10px;
+    border-color: #263326;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+@media(min-width: 768px) {
+    .containerSearchField input {
+        font-size: 18px;
+    }
+}
