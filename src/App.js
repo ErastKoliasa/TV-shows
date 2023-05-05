@@ -10,7 +10,7 @@ function App() {
   const showDetails = useSelector(state => state.showDetails);
   return (
     <div>
-      <BrowserRouter basename='/'>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<Main />} />
