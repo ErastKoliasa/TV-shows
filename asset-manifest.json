@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/TV-shows/static/css/main.3329c72c.css",
+    "main.js": "/TV-shows/static/js/main.835ad42c.js",
+    "static/js/787.28899943.chunk.js": "/TV-shows/static/js/787.28899943.chunk.js",
+    "static/media/missing.jpg": "/TV-shows/static/media/missing.43dc7736214533500bdf.jpg",
+    "index.html": "/TV-shows/index.html",
+    "main.3329c72c.css.map": "/TV-shows/static/css/main.3329c72c.css.map",
+    "main.835ad42c.js.map": "/TV-shows/static/js/main.835ad42c.js.map",
+    "787.28899943.chunk.js.map": "/TV-shows/static/js/787.28899943.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3329c72c.css",
+    "static/js/main.835ad42c.js"
+  ]
+}
